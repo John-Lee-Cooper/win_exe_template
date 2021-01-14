@@ -2,9 +2,9 @@
 
 """ Simple search script """
 
-from pathlib import Path
 from datetime import datetime
-from sys import argv
+from pathlib import Path
+from sys import argv, version
 
 import click
 
@@ -24,7 +24,7 @@ def main():
     # Get input directory from command line
     if len(argv) != 2:
         script = Path(argv[0]).name
-        click.echo(f"Python {sys.version}")
+        click.echo(f"Python {version}")
         click.echo(f"Useage ERROR: Drag a folder on top of {script} icon to run")
         click.echo("Hit any key to exit")
         click.getchar()
@@ -45,8 +45,8 @@ def main():
     try:
         search(input_dir, regx, out_path)
 
-    except Exception as error:
-        error_log = open(output_dir / "error.txt", "w")
+    except Exception as error:  # pylint: disable=broad-except
+        error_log = open("search_error.txt", "w")
         error_log.write(str(error))
 
 
