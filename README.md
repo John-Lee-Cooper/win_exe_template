@@ -12,9 +12,14 @@ It comes with a simple exmplae script that searches for all files in a directory
 
 ## How do I use?
 
+![Executable](image/win_exe_template_1.png)
+
 * Drag a folder containing files onto executable icon.  (Note: the script will run **slowly** the first time).
 * Enter the regular expression for the files you want to find in the folder.
 * The converter will write the matching file into a file names search_<datetime>.txt.
+
+![Search](image/win_exe_template_2.png)
+
 
 ## Developed by
 
